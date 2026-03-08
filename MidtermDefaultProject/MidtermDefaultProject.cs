@@ -4,7 +4,7 @@
     {
         public static void Main()
         {
-            Book[] books= SplitBookData("Library.csv")
+            Book[] books = SplitBookData("Library.csv");
             /*Book book1 = new Book("sad", "asd", 300, 2000, "124", true);
 
             Console.WriteLine(book1);*/
