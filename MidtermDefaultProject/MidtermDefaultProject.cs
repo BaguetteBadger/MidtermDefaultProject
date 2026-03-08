@@ -41,3 +41,6 @@ books[i] = new Book(bookVariables[0], bookVariables[1], int.Parse(bookVariables[
     return count;
 }
 }
+        return books;
+    }
+ }
