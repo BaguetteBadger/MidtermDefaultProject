@@ -61,7 +61,7 @@
             {
                 if(value < 0  || value > 2000)
                 {
-                    throw new Exception("number of pages cannot be negative");
+                    throw new Exception("number of pages cannot be negative or greater than 2000");
                 }
                 numPages = value;
             }

@@ -7,16 +7,8 @@
             Book[] books = SplitBookData("Library.csv");
 
             Library.PrintCatalogue(books);
-
-            Console.WriteLine();
-            Console.WriteLine();
-
-            Library.PrintAvaliableCatalogue(books);
-  
-
-
-
-
+            Library.SortByPage(books);
+            Library.PrintCatalogue(books);
 
         }
 
