@@ -56,40 +56,64 @@ namespace MidtermDefaultProject
         }
 
         public static void SortByPage(Book[] books)
-        {
-            
-            for (int i = 0; i < books.Length -1; i++)
-            {
-                int max = i;
-                for (int j = i + 1; j < books.Length; j++)
-                {
-                    if (books[j].NumPages > books[max].NumPages)
-                    {
-                        max = j;
-                    }
-                }
-                
-                if(max !=i)
-                {
-                    Book temp = books[i];
-                    books[i] = books[max];
-                    books[max] = temp;
-                }
-
-            }
-        }
+         {
+     Array.Sort(books, (b1, b2) => b2.NumPages.CompareTo(b1.NumPages));
+ }
 
         public static void PrintBooks(Book[] books, string search)
         {
-            
+            bool found = false;
             for (int i = 0; i < books.Length; i++)
             {
                 if (books[i].Title == search)
                 {
-
+                    Console.WriteLine(books[i]);
+found = true;
                 }
             }
+            if (!found) 
+            {
+                Console.WriteLine($"No book with the title \"{search}\" was found");
+            }
+    }
+        public static void CheckOutBook(Book[] books, string title)
+{
+    for (int i = 0; i < books.Length; i++) 
+    {
+        if (books[i].Title == title)
+        {
+            if (books[i].IsCheckedOut)
+            {
+                Console.WriteLine("Book is already checked out.");
+            }
 
+            books[i].IsCheckedOut = true;
+            DateTime checkoutDate = DateTime.Now;
+DateTime dueDate = DateTime.Now.AddDays(14);
+Console.WriteLine("Book has been checked out!");
+Console.WriteLine("Checkout Date: " + checkoutDate.ToShortDateString());
+Console.WriteLine("Due Date: " + dueDate.ToShortDateString());
+            return;
+        }
+    }
+    Console.WriteLine("Book not found");
+}
+
+public static void ReturnBook(Book[] books, string title)
+{
+    for (int i = 0; i < books.Length;i++)
+    {
+        if (books[i].Title == title)
+        {
+            if (!books[i].IsCheckedOut)
+            {
+                Console.WriteLine("Book is not currently checked out.");
+            }
+
+            books[i].IsCheckedOut = false;
+            Console.WriteLine("Book has been returned!");
+            return;
+        }
     }
         public static void SortAlpha(Book[] books){
             for(int i=0; i<books.Length-1; i++){
@@ -105,6 +129,8 @@ if(AlphNumVal(books[min].Title)<AlphNumVal(books[x].Title)){
         for(int i=0; i<books.Length; i++){
             Console.WriteLine(books[i]);
         }
+    Console.WriteLine("Book not found");
+}
 }
         public static double AlphNumVal(string title){
             double val=0;
