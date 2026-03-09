@@ -91,5 +91,79 @@ namespace MidtermDefaultProject
             }
 
     }
+        public static void SortAlpha(Book[] books){
+            for(int i=0; i<books.Length-1; i++){
+                int min=i;
+                for(int x=i+1; x<books.Length;x++){
+                    
+if(AlphNumVal(books[min].Title)<AlphNumVal(books[x].Title)){
+    min=x;
+    (books[min], books[i])=(books[i], books[min]);
+            }
+                }
+        }
+        
 }
+        public static double AlphNumVal(string title){
+            double val=0;
+            for(int i=0; i< title.Length; i++){
+                double ex=Double.Parse(i);
+if(title[i]='A'||title[i]='a'){
+    val+=26/pow(10,ex);
+            } else if(title[i]='B'||title[i]='b'){
+    val+=25/pow(10,ex);
+            } else if(title[i]='C'||title[i]='c'){
+    val+=24/pow(10,ex);
+            } else if(title[i]='D'||title[i]='d'){
+    val+=23/pow(10,ex);
+            } else if(title[i]='E'||title[i]='e'){
+    val+=22/pow(10,ex);
+            } else if(title[i]='F'||title[i]='f'){
+    val+=21/pow(10,ex);
+            } else if(title[i]='G'||title[i]='g'){
+    val+=20/pow(10,ex);
+            } else if(title[i]='H'||title[i]='h'){
+    val+=19/pow(10,ex);
+            } else if(title[i]='I'||title[i]='i'){
+    val+=18/pow(10,ex);
+            } else if(title[i]='J'||title[i]='j'){
+    val+=17/pow(10,ex);
+            } else if(title[i]='K'||title[i]='k'){
+    val+=16/pow(10,ex);
+            } else if(title[i]='L'||title[i]='l'){
+    val+=15/pow(10,ex);
+            } else if(title[i]='M'||title[i]='m'){
+    val+=14/pow(10,ex);
+            } else if(title[i]='N'||title[i]='n'){
+    val+=13/pow(10,ex);
+            } else if(title[i]='O'||title[i]='o'){
+    val+=12/pow(10,ex);
+            } else if(title[i]='P'||title[i]='p'){
+    val+=11/pow(10,ex);
+            } else if(title[i]='Q'||title[i]='q'){
+    val+=10/pow(10,ex);
+            } else if(title[i]='R'||title[i]='r'){
+    val+=9/pow(10,ex);
+            } else if(title[i]='S'||title[i]='s'){
+    val+=8/pow(10,ex);
+            } else if(title[i]='T'||title[i]='t'){
+    val+=7/pow(10,ex);
+            } else if(title[i]='U'||title[i]='u'){
+    val+=6/pow(10,ex);
+            } else if(title[i]='V'||title[i]='v'){
+    val+=5/pow(10,ex);
+            } else if(title[i]='W'||title[i]='w'){
+    val+=4/pow(10,ex);
+            } else if(title[i]='X'||title[i]='x'){
+    val+=3/pow(10,ex);
+            } else if(title[i]='Y'||title[i]='y'){
+    val+=2/pow(10,ex);
+            } else if(title[i]='Z'||title[i]='z'){
+    val+=1/pow(10,ex);
+            } else {
+    val+=0;
+}
+        }
+            return val;
+        }
 }
