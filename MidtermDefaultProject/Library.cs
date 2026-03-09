@@ -57,8 +57,10 @@ namespace MidtermDefaultProject
 
         public static void SortByPage(Book[] books)
         {
+
+            Array.Sort(books, (b1, b2) => b2.NumPages.CompareTo(b1.NumPages));
             
-            for (int i = 0; i < books.Length -1; i++)
+            /*for (int i = 0; i < books.Length -1; i++)
             {
                 int max = i;
                 for (int j = i + 1; j < books.Length; j++)
@@ -76,7 +78,7 @@ namespace MidtermDefaultProject
                     books[max] = temp;
                 }
 
-            }
+            }*/
         }
 
         public static void PrintBooks(Book[] books, string search)
