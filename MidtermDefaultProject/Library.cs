@@ -115,7 +115,9 @@ public static void ReturnBook(Book[] books, string title)
             return;
         }
     }
-        public static void SortAlpha(Book[] books){
+    Console.WriteLine("Book not found");
+}
+     public static void SortAlpha(Book[] books){
             for(int i=0; i<books.Length-1; i++){
                 int min=i;
                 for(int x=i+1; x<books.Length;x++){
@@ -129,8 +131,6 @@ if(AlphNumVal(books[min].Title)<AlphNumVal(books[x].Title)){
         for(int i=0; i<books.Length; i++){
             Console.WriteLine(books[i]);
         }
-    Console.WriteLine("Book not found");
-}
 }
         public static double AlphNumVal(string title){
             double val=0;
