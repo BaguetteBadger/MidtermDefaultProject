@@ -18,7 +18,8 @@ while (running)
     Console.WriteLine("6. [title]     Search single Book Info");
     Console.WriteLine("7. [checkout]  Check Out a book");
     Console.WriteLine("8. [return]    Return a book");
-    Console.WriteLine("9. [quit]      Quit");
+    Console.WriteLine("9. [sort2]     Sort by alphabetical title");
+    Console.WriteLine("10. [quit]      Quit");
     Console.Write("\nChoose an option: ");
 
     string input = Console.ReadLine().ToLower();
@@ -91,6 +92,8 @@ while (running)
             Library.ReturnBook(books, returnTitle);
             break;
         case "9":
+            Library.AlphSort(books);
+        case "10":
             running = false;
             Console.WriteLine("Goodbye!");
             break;
