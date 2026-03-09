@@ -102,7 +102,9 @@ if(AlphNumVal(books[min].Title)<AlphNumVal(books[x].Title)){
             }
                 }
         }
-        
+        for(int i=0; i<books.Length; i++){
+            Console.WriteLine(books[i]);
+        }
 }
         public static double AlphNumVal(string title){
             double val=0;
