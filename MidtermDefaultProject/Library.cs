@@ -81,15 +81,56 @@ namespace MidtermDefaultProject
 
         public static void PrintBooks(Book[] books, string search)
         {
-            
+            bool found = false;
             for (int i = 0; i < books.Length; i++)
             {
                 if (books[i].Title == search)
                 {
-
+                    Console.WriteLine(books[i]);
+found = true;
                 }
             }
-
+            if (!found) 
+            {
+                Console.WriteLine($"No book with the title \"{search}\" was found");
+            }
     }
+        public static void CheckOutBook(Book[] books, string title)
+{
+    for (int i = 0; i < books.Length; i++) 
+    {
+        if (books[i].Title == title)
+        {
+            if (books[i].IsCheckedOut)
+            {
+                Console.WriteLine("Book is already checked out.");
+            }
+
+            books[i].IsCheckedOut = true;
+            Console.WriteLine("Book has been checked out!");
+            return;
+        }
+    }
+    Console.WriteLine("Book not found");
+}
+
+public static void ReturnBook(Book[] books, string title)
+{
+    for (int i = 0; i < books.Length;i++)
+    {
+        if (books[i].Title == title)
+        {
+            if (!books[i].IsCheckedOut)
+            {
+                Console.WriteLine("Book is not currently checked out.");
+            }
+
+            books[i].IsCheckedOut = false;
+            Console.WriteLine("Book has been returned!");
+            return;
+        }
+    }
+    Console.WriteLine("Book not found");
+}
 }
 }
