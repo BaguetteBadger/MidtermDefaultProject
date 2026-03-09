@@ -92,7 +92,7 @@ while (running)
             Library.ReturnBook(books, returnTitle);
             break;
         case "9":
-            Library.AlphSort(books);
+            Library.SortAlpha(books);
         case "10":
             running = false;
             Console.WriteLine("Goodbye!");
