@@ -115,6 +115,7 @@ public static void ReturnBook(Book[] books, string title)
             return;
         }
     }
+}
         public static void SortAlpha(Book[] books){
             for(int i=0; i<books.Length-1; i++){
                 int min=i;
